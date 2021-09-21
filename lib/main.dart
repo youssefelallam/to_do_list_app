@@ -38,7 +38,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   Future get_data() async {
     var response = await http
-        .get(Uri.parse('https://ramiyoussef.pythonanywhere.com/list/'));
+        .get(Uri.parse('API URL'));
     var jsonresponse = jsonDecode(response.body);
     return jsonresponse;
   }
@@ -46,13 +46,13 @@ class _HomeState extends State<Home> {
   //
   Future<http.Response> delete(var id) async {
     final http.Response response = await http
-        .delete(Uri.parse('https://ramiyoussef.pythonanywhere.com/list/$id'));
+        .delete(Uri.parse('API URL/$id'));
     return response;
   }
 
   Future<http.Response> create(String mytitle, mybody, mydatetime) {
     return http.post(
-      Uri.parse('https://ramiyoussef.pythonanywhere.com/list/'),
+      Uri.parse('API URL'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
