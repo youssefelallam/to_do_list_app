@@ -26,7 +26,7 @@ class _update_taskState extends State<update_task> {
 
   Future<http.Response> update(String mytitle, mybody, mydatetime, var id) {
     return http.put(
-      Uri.parse('https://ramiyoussef.pythonanywhere.com/list/$id'),
+      Uri.parse('API URL/$id'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
